@@ -1,4 +1,7 @@
 class Solution:
+    #Given two arrays, write a function to compute their intersection.
+
+
     def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
 
         mydict = {}
