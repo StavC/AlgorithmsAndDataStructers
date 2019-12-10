@@ -16,6 +16,7 @@ Only the space character ' ' is considered as whitespace character.
 Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: [−231,  231 − 1]. If the numerical value is out of the range of representable values, INT_MAX (231 − 1) or INT_MIN (−231) is returned.
 
     '''
+
     def myAtoi(self, str: str) -> int:
         num = 0
         MAX_INT = 2147483647
@@ -25,12 +26,12 @@ Assume we are dealing with an environment which could only store integers within
             return 0
         if str[0] != '-' and str[0] != '+' and not str[0].isdigit():
             return 0
-        bool1 = True
+        bool1 = 1
         i = 0
 
         if str[0] is '-':
             i = 1
-            bool1 = False
+            bool1 = -1
         if str[0] is '+':
             i = 1
 
@@ -38,8 +39,7 @@ Assume we are dealing with an environment which could only store integers within
             num = num * 10 + int(str[i])
             i += 1
 
-        if bool1 == False:
-            num = num * -1
+        num = num * bool1
         if num > MAX_INT > 0:
             return MAX_INT
         elif num < MIN_INT < 0:
